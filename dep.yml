@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: liveapp
   labels:
     app: nginx-app
 spec:
@@ -15,7 +15,7 @@ spec:
         app: nginx-app
     spec:
       containers:
-      - name: nginx-container
+      - name: liveapp-container
         image: devopsbyrushi/liveproject
         ports:
         - containerPort: 8080
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: liveappservice
   labels:
     app: nginx-app
 spec:
